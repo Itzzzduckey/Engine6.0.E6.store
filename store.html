@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Engine6.0 Store</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: { inter: ['Inter', 'sans-serif'] },
+          },
+        },
+      };
+    </script>
+
+    <!-- Same styles -->
+    <style>
+      body {
+        background: #000;
+        overflow-x: hidden;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        background-image:
+          linear-gradient(rgba(120, 100, 200, 0.18) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(120, 100, 200, 0.18) 1px, transparent 1px);
+        background-size: 50px 50px;
+        opacity: 0.6;
+      }
+      .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 2.2rem;
+        max-width: 1680px;
+        margin: 0 auto;
+      }
+      .module-card {
+        height: 480px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(140, 100, 240, 0.12);
+        box-shadow: 0 16px 60px rgba(0,0,0,0.8);
+        transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.65s ease, border-color 0.4s ease;
+        background: #0a0a0f;
+        position: relative;
+      }
+      .module-card:hover {
+        transform: translateY(-14px) scale(1.025);
+        box-shadow: 0 40px 100px rgba(180,140,255,0.12), 0 0 0 1.8px rgba(140,100,240,0.22) inset;
+        border-color: rgba(140,100,240,0.32);
+      }
+      .module-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+      .module-card:hover img {
+        transform: scale(1.06);
+      }
+      .view-btn, .back-btn {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #6d28d9, #a855f7);
+        box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+        transition: all 0.4s ease;
+      }
+      .view-btn:hover, .back-btn:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 20px 50px rgba(168, 85, 247, 0.6);
+      }
+    </style>
+</head>
+
+<body class="font-inter antialiased text-white relative">
+
+    <header class="bg-zinc-900/80 backdrop-blur-md border-b border-purple-900/30 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="back-btn inline-flex items-center gap-2 px-6 py-3 text-lg font-semibold rounded-full">
+                ← Back to Home
+            </a>
+            <h1 class="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-fuchsia-400">
+                Engine6.0 Store
+            </h1>
+            <div class="w-32"></div> <!-- Spacer to center title -->
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-center mb-16">
+            <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+                Select your duration and unlock full power. Undetectable • Regular updates • Instant delivery via Discord.
+            </p>
+        </div>
+
+        <div class="modules-grid">
+            <!-- 1 Day -->
+            <a href="Fort rpiv.html" class="module-card group">
+                <img src="https://image2url.com/r2/default/images/1772413811194-5e368d7b-f9f2-44a9-92b3-6bb74c7a1f8c.png" alt="Fort private">
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="view-btn block text-center text-lg font-semibold py-4 px-12 rounded-full">View Product</span>
+                </div>
+            </a>
+
+            <!-- 1 Week -->
+            <a href="product.html?duration=1week" class="module-card group">
+                <img src="https://image2url.com/r2/default/images/1772414149338-bda78ef0-6a22-4570-9c3e-bc567a740ef4.png" alt="Hwid Spoofer">
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="view-btn block text-center text-lg font-semibold py-4 px-12 rounded-full">View Product</span>
+                </div>
+            </a>
+
+            <!-- 1 Month -->
+            <a href="product.html?duration=1month" class="module-card group">
+                <img src="https://image2url.com/r2/default/images/1772415462034-8392b817-8dc1-489c-8769-7b6254349a30.png" alt="More comming soon">
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="view-btn block text-center text-lg font-semibold py-4 px-12 rounded-full">View Product</span>
+                </div>
+            </a>
+
+            <!-- Lifetime -->
+            <a href="product.html?duration=lifetime" class="module-card group">
+                <img src="https://image2url.com/r2/default/images/1772415462034-8392b817-8dc1-489c-8769-7b6254349a30.png" alt="More comming soon">
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="view-btn block text-center text-lg font-semibold py-4 px-12 rounded-full">View Product</span>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-zinc-900 text-center py-8 border-t border-purple-900/20">
+        <p class="text-slate-500 text-sm">Engine6.0 © 2024 • All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Engine6.0 - Select Duration</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: { inter: ['Inter', 'sans-serif'] },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background: #000;
+        overflow-x: hidden;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        background-image:
+          linear-gradient(rgba(120, 100, 200, 0.18) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(120, 100, 200, 0.18) 1px, transparent 1px);
+        background-size: 50px 50px;
+        opacity: 0.6;
+      }
+      .product-hero img {
+        border-radius: 24px;
+        border: 1px solid rgba(140, 100, 240, 0.15);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+        transition: all 0.6s;
+      }
+      .product-hero img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 40px 120px rgba(168, 85, 247, 0.25);
+      }
+      .buy-button {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #6d28d9, #a855f7);
+        box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+        transition: all 0.4s ease;
+      }
+      .buy-button:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 20px 50px rgba(168, 85, 247, 0.6);
+      }
+      .buy-button::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 60%);
+        opacity: 0;
+        transition: opacity 0.6s;
+      }
+      .buy-button:hover::before {
+        opacity: 1;
+      }
+      .option-label {
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      input[type="radio"]:checked + .option-label {
+        background: rgba(168, 85, 247, 0.2);
+        border-color: #a855f7;
+      }
+    </style>
+</head>
+
+<body class="font-inter antialiased text-white relative min-h-screen">
+
+    <header class="bg-zinc-900/70 backdrop-blur-md border-b border-purple-900/30 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="store.html" class="text-purple-300 hover:text-purple-100 transition flex items-center gap-2 text-lg">
+                ← Back to Store
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+
+            <div class="product-hero">
+                <!-- Fixed image – always the same -->
+                <img src="https://image2url.com/r2/default/images/1772413811194-5e368d7b-f9f2-44a9-92b3-6bb74c7a1f8c.png" alt="Engine6.0" class="w-full h-auto">
+            </div>
+
+            <div class="space-y-10">
+
+                <h1 id="product-title" class="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-fuchsia-400 mb-4">
+                    Select Duration
+                </h1>
+
+                <!-- Duration Selector -->
+                <section class="bg-zinc-900/70 border border-purple-500/30 rounded-2xl p-8">
+                    <h3 class="text-3xl font-bold mb-6 text-purple-300">Choose License Duration</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="option-label flex items-center gap-3 p-4 border border-purple-500/30 rounded-xl">
+                            <input type="radio" name="duration" value="1day" data-price="5.00" checked>
+                            1 Day - $5.00
+                        </label>
+                        <label class="option-label flex items-center gap-3 p-4 border border-purple-500/30 rounded-xl">
+                            <input type="radio" name="duration" value="1week" data-price="10.00">
+                            1 Week - $10.00
+                        </label>
+                        <label class="option-label flex items-center gap-3 p-4 border border-purple-500/30 rounded-xl">
+                            <input type="radio" name="duration" value="1month" data-price="12.99">
+                            1 Month - $22.00
+                        </label>
+                        <label class="option-label flex items-center gap-3 p-4 border border-purple-500/30 rounded-xl">
+                            <input type="radio" name="duration" value="lifetime" data-price="69.99">
+                            Lifetime - $250.00
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Buy Section -->
+                <a id="buy-link" href="https://cash.app/$johnyukhh" class="buy-button block text-center text-xl font-bold py-6 px-10 rounded-full">
+                    Buy with Cash App
+                </a>
+                <p class="text-center text-slate-400 text-sm">
+                    Pay via Cash App ($yourcashtag) → Send proof in Discord ticket → Get key instantly.
+                </p>
+
+                <!-- Features -->
+                <section>
+                    <h3 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-200 to-purple-300 mb-6">
+                        Included Features
+                    </h3>
+                    <ul class="space-y-4 text-slate-300 list-disc pl-6">
+                        <li>Undetectable Uac, EAC,</li>
+                         <li>Full exsternal</li>
+                        <li>Torny ready</li>
+                        <li>Has aimbot smoothing for aimbot and fov check</li>
+                        <li>has esp normal box round and corrnred esp also has china hat and snaplines distance meeter</li>
+                        <li>has built in spoofer if needed</li>
+                        <li>has clean Imgui but basic</li>
+                        <li>Regular updates & screen-share proof</li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- JS for dynamic title & buy button only (image is fixed) -->
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const initial = urlParams.get('duration') || '1day';
+
+      const radios = document.querySelectorAll('input[name="duration"]');
+      const titleEl = document.getElementById('product-title');
+      const buyLink = document.getElementById('buy-link');
+
+      function updateProduct() {
+        const selected = document.querySelector('input[name="duration"]:checked');
+        if (!selected) return;
+
+        const dur = selected.value;
+        const price = selected.dataset.price;
+
+        let titleText = '';
+        if (dur === '1day') titleText = '1 Day License';
+        else if (dur === '1week') titleText = '1 Week License';
+        else if (dur === '1month') titleText = '1 Month License';
+        else if (dur === 'lifetime') titleText = 'Lifetime License';
+
+        titleEl.textContent = titleText;
+        buyLink.textContent = `Buy ${titleText} with Cash App ($${price})`;
+      }
+
+      radios.forEach(radio => {
+        radio.addEventListener('change', updateProduct);
+      });
+
+      // Set initial from URL
+      document.querySelector(`input[value="${initial}"]`).checked = true;
+      updateProduct();
+    </script>
+
+</body>
+</html>

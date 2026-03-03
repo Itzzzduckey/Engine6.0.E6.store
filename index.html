@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <title>Engine6.0</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Engine6.0 - Unleash the full potential of your Cheating experience.">
+    <meta name="keywords" content="grim, grim client, minecraft client, minecraft, minecraft hacked client, best minecraft hacked client">
+    <link rel="stylesheet" href="assets/animation.css">
+    <!-- OG -->
+    <meta property="og:title" content="Engine6.0 - Unleash the full potential of your cheating experience.">
+    <meta property="og:description" content="✨"/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content="Engine6.0.E6">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Added inline styles inspired by Engine6.0 for grid + cards -->
+    <style>
+      body {
+        background: #000;
+        overflow-x: hidden;
+      }
+      /* Grid background (subtle, visible) */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        background-image:
+          linear-gradient(rgba(120, 100, 200, 0.18) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(120, 100, 200, 0.18) 1px, transparent 1px);
+        background-size: 50px 50px;
+        opacity: 0.6;
+      }
+      /* Particles container (keep your existing canvas, but add fallback style) */
+      .particles-fallback {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
+      }
+      /* Card grid */
+      .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 2.2rem;
+        max-width: 1680px;
+        margin: 0 auto;
+      }
+      .module-card {
+        height: 480px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(140, 100, 240, 0.12);
+        box-shadow: 0 16px 60px rgba(0,0,0,0.8);
+        transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.65s ease, border-color 0.4s ease;
+        cursor: pointer;
+        background: #0a0a0f;
+        position: relative;
+      }
+      .module-card:hover {
+        transform: translateY(-14px) scale(1.025);
+        box-shadow: 0 40px 100px rgba(180,140,255,0.12), 0 0 0 1.8px rgba(140,100,240,0.22) inset;
+        border-color: rgba(140,100,240,0.32);
+      }
+      .module-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+      .module-card:hover img {
+        transform: scale(1.06);
+      }
+      .module-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        box-shadow: inset 0 0 60px 15px rgba(140,100,255,0.08);
+        background: radial-gradient(circle at 50% 15%, rgba(180,140,255,0.08) 0%, transparent 65%);
+      }
+      .module-card:hover::after {
+        opacity: 1;
+      }
+    </style>
+
+</head>
+
+<body class="relative font-inter antialiased">
+
+    <main class="relative min-h-screen flex flex-col justify-center bg-zinc-900 overflow-hidden">
+        <div class="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
+
+            <div class="text-center">
+
+                <!-- Illustration #1 -->
+                <div class="absolute top-10 left-0 rotate-180 -translate-x-3/4 -scale-x-100 blur-3xl opacity-70 pointer-events-none" aria-hidden="true">
+                    <img src="assets/glow.svg" class="max-w-none" width="852" height="582" alt="Illustration" />
+                </div>
+                
+                <!-- Illustration #2 -->
+                <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 blur-3xl opacity-70 pointer-events-none" aria-hidden="true">
+                    <img src="assets/glow.svg" class="max-w-none" width="852" height="582" alt="Illustration" />
+                </div>
+            
+                <div class="relative">
+
+                    <!-- Title -->
+                    <h1 class="inline-flex font-extrabold text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">Engine6.0</h1>
+                    
+                    <div class="max-w-3xl mx-auto mb-8">
+                        <p class="text-lg text-slate-400">Unleash the full potential of your Cheating experience.</p>
+                    </div>
+
+                    <div class="inline-flex justify-center space-x-4">
+
+                      <!-- Buy now button -->
+                      <div>
+                        <a href="store.html" class="mb-4 lg:flex  bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block">
+                          <span class="absolute inset-0 overflow-hidden rounded-full">
+                            <span class="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(76,29,149,0.6)_0%,rgba(76,29,149,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+                          </span>
+                          <div class="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-900 py-1 px-6 md:px-12 ring-1 ring-white/10">
+                            <span>Store</span>
+                            <svg fill="none" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                            </svg>
+                          </div>
+                          <span class="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-purple-400/0 via-purple-400/90 to-purple-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
+                        </a>
+                      </div>
+
+                      <!-- Showcase Button -->
+                      <div>
+                        <a href="https://discord.gg/PSp7fFgXK5" class="mb-4 lg:flex  bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block">
+                          <span class="absolute inset-0 overflow-hidden rounded-full">
+                            <span class="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(76,29,149,0.6)_0%,rgba(76,29,149,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+                          </span>
+                          <div class="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-900 py-1 px-6 md:px-12 ring-1 ring-white/10">
+                            <span>Discord</span>
+                            <svg fill="none" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                            </svg>
+                          </div>
+                          <span class="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-purple-400/0 via-purple-400/90 to-purple-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+
+        <!-- Particles Animation -->
+        <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <canvas data-particle-animation></canvas>
+        </div>
+
+    </main>
+
+    <section class="bg-zinc-900 overflow-hidden min-h-screen">
+      <div class="w-full max-w-5xl mx-auto px-4 md:px-6 py-24">
+          <div class="text-center">
+              <div class="relative">
+                  <h1 class="inline-flex font-extrabold text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">New cheating client</h1>
+              </div>
+              <div class="max-w-3xl mx-auto mb-8">
+                  <p class="text-lg text-slate-400">After few months of work we created client undetectable by Ocean, Echo and Golden.</p>
+              </div>
+          </div>
+          <div class="space-y-10">
+              <div class="flex flex-col sm:flex-row justify-between gap-5" data-spotlight>
+                  <div class="w-full md:w-3/5 h-full relative bg-transparent border-solid border rounded-lg p-5 before:rounded-full before:opacity-0 before:pointer-events-none before:transition-opacity before:duration-500 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:group-hover:opacity-100 before:z-10 before:blur-[100px] after:absolute after:w-96 after:h-96 after:-left-48 after:-top-48 after:bg-purple-500 after:rounded-full after:opacity-0 after:pointer-events-none after:transition-opacity after:duration-500 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:hover:opacity-10 after:z-30 after:blur-[100px] overflow-hidden">
+                      <div>
+                          <h1 class="inline-flex font-extrabold text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">
+                              Undetectable
+                          </h1>
+                          <p class="text-l text-slate-400">
+                              Engine6.0 underwent numerous tests for detection using some of the most acclaimed anti-cheat systems in gaming. These include Easy Anti-Cheat (EAC), BattlEye, and FiveGuard — advanced protections designed to identify and flag cheating or game manipulation.
+                          </p>
+                      </div>
+                      <div class="flex flex-row gap-6 items-center select-none mt-6">
+                          <img class="hover:scale-110 transition-all duration-300 w-20 h-20" src="https://image2url.com/r2/default/images/1772570571913-87bb2ca1-9f0f-418d-807a-859566fd1553.png" alt="EAC">
+                          <img class="hover:scale-110 transition-all duration-300 w-28 h-20 object-contain" src="https://image2url.com/r2/default/images/1772570604054-a00856a5-2e04-4be2-a82c-2a4f4183d421.png" alt="BattlEye">
+                          <img class="hover:scale-110 transition-all duration-300 w-32 h-20 object-contain" src="https://image2url.com/r2/default/images/1772570640217-7bc7b11a-37c1-4283-8f32-5ecb89a97984.png" alt="FiveGuard">
+                      </div>
+                  </div>
+
+                  <div class="w-full md:w-2/5 relative border-solid border rounded-lg p-5 before:rounded-full before:opacity-0 before:pointer-events-none before:transition-opacity before:duration-500 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:group-hover:opacity-100 before:z-10 before:blur-[100px] after:absolute after:w-96 after:h-96 after:-left-48 after:-top-48 after:bg-purple-500 after:rounded-full after:opacity-0 after:pointer-events-none after:transition-opacity after:duration-500 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:hover:opacity-10 after:z-30 after:blur-[100px] overflow-hidden">
+                      <h1 class="inline-flex font-extrabold text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">
+                          Regular Updates
+                      </h1>
+                      <p class="text-lg text-slate-400">
+                          Updates are regularly posted on our release channel. We recommend checking it periodically for the latest versions and features.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="bg-zinc-900 pt-5">
+      <div class="text-center">
+          <div class="relative">
+              <h1 class="inline-flex font-extrabold text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">Products</h1>
+          </div>
+          <div class="max-w-3xl mx-auto mb-8">
+              <p class="text-lg text-slate-400">Our client is for everyone. Choose your tier and start dominating today.</p>
+          </div>
+      </div>
+      
+      <!-- New Grid Showcase (replaces old cards) -->
+      <div class="modules-grid max-w-6xl mx-auto px-4 md:px-6 pt-6 pb-24">
+        
+        <!-- Card 1: 1 Month -->
+        <a href="Fort rpiv.html" class="module-card">
+          <img src="https://image2url.com/r2/default/images/1772413811194-5e368d7b-f9f2-44a9-92b3-6bb74c7a1f8c.png" alt="Engine6.0 Fortnight private">
+        </a>
+
+        <!-- Card 2: 3 Month -->
+        <a href="Hwid spoofer.html" class="module-card">
+          <img src="https://image2url.com/r2/default/images/1772414149338-bda78ef0-6a22-4570-9c3e-bc567a740ef4.png" alt="hiwd Spoofer">
+        </a>
+
+        <!-- Card 3: Lifetime -->
+        <a href="" class="module-card">
+          <img src="https://image2url.com/r2/default/images/1772415462034-8392b817-8dc1-489c-8769-7b6254349a30.png" alt="Comming soon">
+        </a>
+
+        <!-- Optional extra showcase cards (feature previews) -->
+        <div class="module-card">
+          <img src="https://image2url.com/r2/default/images/1772415462034-8392b817-8dc1-489c-8769-7b6254349a30.png" alt="Comming soon">
+        </div>
+        <div class="module-card">
+          <img src="https://image2url.com/r2/default/images/1772415462034-8392b817-8dc1-489c-8769-7b6254349a30.png" alt="Comming soon">
+        </div>
+
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-900 text-center pb-8 pt-4">
+    <p class="text-sm text-slate-500">
+      Engine6.0 - 2024 • All Rights Reserved
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/particles.js"></script>
+  <script src="assets/spotlight.js"></script>
+  <script src="assets/reveal.js"></script>
+
+</body>
+
+</html>
